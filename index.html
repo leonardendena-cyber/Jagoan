@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YANZ MOD</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 10%, #3b1764 0%, transparent 30%),
+        radial-gradient(circle at 85% 20%, #261044 0%, transparent 28%),
+        linear-gradient(135deg, #08040d, #100719, #08040d);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(168,85,247,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168,85,247,.035) 1px, transparent 1px);
+
+    background-size: 35px 35px;
+    pointer-events: none;
+}
+
+.glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow.one {
+    background: #7e22ce;
+    top: 15%;
+    left: -120px;
+    opacity: .18;
+}
+
+.glow.two {
+    background: #c026d3;
+    bottom: 10%;
+    right: -120px;
+    opacity: .14;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 60px 20px 35px;
+}
+
+/* FOTO PROFIL */
+
+.logo {
+    width: 105px;
+    height: 105px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background: #12091d;
+
+    border: 1px solid #c084fc;
+
+    box-shadow:
+        0 0 25px rgba(168,85,247,.65),
+        0 0 80px rgba(126,34,206,.25);
+
+    overflow: hidden;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+@keyframes floating {
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+header h1 {
+    margin: 25px 0 6px;
+
+    font-size: 44px;
+    letter-spacing: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d8b4fe,
+            #a855f7,
+            #ffffff
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 250% center;
+    }
+}
+
+header p {
+    margin: 0;
+    color: #b9a5c9;
+}
+
+/* CONTAINER */
+
+.container {
+    width: min(650px, calc(100% - 30px));
+    margin: auto;
+}
+
+/* INTRO */
+
+.intro {
+    text-align: center;
+    margin: 15px 0 30px;
+}
+
+.intro h2 {
+    margin-bottom: 8px;
+}
+
+.intro p {
+    color: #a78bfa;
+    line-height: 1.7;
+}
+
+/* CARD */
+
+.card {
+    position: relative;
+
+    background: rgba(21, 12, 31, .82);
+
+    border: 1px solid rgba(168,85,247,.25);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.3),
+        inset 0 0 25px rgba(168,85,247,.025);
+
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: rgba(192,132,252,.5);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.4),
+        0 0 25px rgba(168,85,247,.08);
+}
+
+/* SECTION TITLE */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.section-title h3 {
+    margin: 0;
+    color: #eadcff;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7e22ce,
+            transparent
+        );
+}
+
+/* BUTTON */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    margin: 9px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(192,132,252,.18);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(126,34,206,.95),
+            rgba(74,25,105,.95)
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: .25s;
+
+    box-shadow:
+        0 8px 25px rgba(109,40,217,.2);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,.35),
+        0 15px 40px rgba(0,0,0,.3);
+}
+
+.btn:active {
+    transform: scale(.96);
+}
+
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,.1);
+
+    font-size: 18px;
+}
+
+.arrow {
+    font-size: 23px;
+    color: #d8b4fe;
+
+    transition: .25s;
+}
+
+.btn:hover .arrow {
+    transform: translateX(5px);
+    color: white;
+}
+
+/* ABOUT */
+
+.about {
+    color: #b9a9c7;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.about b {
+    color: #d8b4fe;
+}
+
+/* CODE BOX */
+
+.code-box {
+    margin-top: 20px;
+
+    padding: 17px;
+
+    background: #09050f;
+
+    border: 1px solid #35145a;
+
+    border-radius: 15px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    color: #a78bfa;
+
+    line-height: 1.7;
+
+    overflow-x: auto;
+}
+
+.code-box .purple {
+    color: #c084fc;
+}
+
+.code-box .pink {
+    color: #f0abfc;
+}
+
+.code-box .gray {
+    color: #6f607c;
+}
+
+/* BADGES */
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.badge {
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background: #21102f;
+
+    border: 1px solid #4c1d95;
+
+    color: #d8b4fe;
+
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px 15px;
+
+    color: #6f607c;
+
+    font-size: 12px;
+}
+
+footer strong {
+    color: #a855f7;
+}
+
+/* TOAST */
+
+#toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translate(-50%, 100px);
+
+    background: #1a0e2b;
+
+    border: 1px solid #7e22ce;
+
+    color: #e9d5ff;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    opacity: 0;
+
+    transition: .35s;
+
+    box-shadow:
+        0 0 25px rgba(126,34,206,.35);
+
+    z-index: 999;
+}
+
+#toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+/* MOBILE */
+
+@media(max-width:500px) {
+
+    header {
+        padding-top: 45px;
+    }
+
+    header h1 {
+        font-size: 34px;
+        letter-spacing: 5px;
+    }
+
+    .logo {
+        width: 88px;
+        height: 88px;
+    }
+
+    .container {
+        width: calc(100% - 22px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        <img src="Yanz.png" alt="YANZ MOD">
+    </div>
+
+    <h1>YANZ MOD</h1>
+
+    <p>
+        Coding • Mod Game • Creativity
+    </p>
+
+</header>
+
+<div class="container">
+
+    <!-- INTRO -->
+
+    <div class="intro">
+
+        <h2>
+            Welcome to my space 👋
+        </h2>
+
+        <p>
+            Tempat untuk coding, membuat mod game,
+            ngulik sesuatu yang baru, dan berbagi karya.
+        </p>
+
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h3>
+                🌐 Social Media
+            </h3>
+
+            <div class="line"></div>
+
+        </div>
+
+        <!-- YOUTUBE -->
+
+        <a
+            class="btn"
+            href="https://youtube.com/@yan-d5f?si=9EgD1gIlXSJ8Qcn8"
+            target="_blank"
+            rel="noopener"
+            onclick="showToast('Membuka YouTube...')"
+        >
+
+            <div class="btn-left">
+
+                <div class="icon">
+                    ▶
+                </div>
+
+                <span>
+                    YouTube
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <!-- TIKTOK -->
+
+        <a
+            class="btn"
+            href="https://www.tiktok.com/@mod_channel4"
+            target="_blank"
+            rel="noopener"
+            onclick="showToast('Membuka TikTok...')"
+        >
+
+            <div class="btn-left">
+
+                <div class="icon">
+                    ♪
+                </div>
+
+                <span>
+                    TikTok
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="btn"
+            href="https://whatsapp.com/channel/0029Vb8tyia1iUxR1UuaYp11"
+            target="_blank"
+            rel="noopener"
+            onclick="showToast('Membuka Saluran WhatsApp...')"
+        >
+
+            <div class="btn-left">
+
+                <div class="icon">
+                    ◉
+                </div>
+
+                <span>
+                    Saluran WhatsApp
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h3>
+                💻 About YANZ
+            </h3>
+
+            <div class="line"></div>
+
+        </div>
+
+        <p class="about">
+
+            Seorang yang suka
+            <b>coding, mod game, dan ngulik teknologi</b>,
+            serta menciptakan berbagai karya dari ide sendiri. 🎮💻
+
+            <br><br>
+
+            Suka mengeksplorasi game, membuat dan mengembangkan
+            <b>modifikasi game</b>, mencoba hal baru,
+            serta berbagi hasil karya kepada orang lain.
+
+            <br><br>
+
+            <b>
+                Code when inspired.<br>
+                Mod when motivated.<br>
+                Create and enjoy the process.
+            </b>
+
+            <br><br>
+
+            Welcome to my little digital space. 🚀
+
+        </p>
+
+        <!-- CODING STYLE BOX -->
+
+        <div class="code-box">
+
+            <span class="gray">// yanz.js</span><br>
+
+            <span class="purple">const</span>
+            yanz = {<br>
+
+            &nbsp;&nbsp;name:
+            <span class="pink">"YANZ MOD"</span>,<br>
+
+            &nbsp;&nbsp;passion:
+            <span class="pink">"Coding & Mod Game"</span>,<br>
+
+            &nbsp;&nbsp;focus:
+            <span class="pink">"Game Modding"</span>,<br>
+
+            &nbsp;&nbsp;goal:
+            <span class="pink">"Keep Creating"</span><br>
+
+            };
+
+        </div>
+
+        <div class="badges">
+
+            <div class="badge">
+                💻 Coding
+            </div>
+
+            <div class="badge">
+                🎮 Mod Game
+            </div>
+
+            <div class="badge">
+                🛠️ Modding
+            </div>
+
+            <div class="badge">
+                🚀 Creating
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEEDBACK -->
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h3>
+                💬 Feedback
+            </h3>
+
+            <div class="line"></div>
+
+        </div>
+
+        <p class="about">
+
+            Punya saran, kritik, atau sekadar ingin
+            memberikan pendapat?
+            Kirim feedback melalui halaman resmi YANZ.
+
+        </p>
+
+        <a
+            class="btn"
+            href="https://tinyurl.com/FeedbackYanz"
+            target="_blank"
+            rel="noopener"
+            onclick="showToast('Membuka Feedback...')"
+        >
+
+            <div class="btn-left">
+
+                <div class="icon">
+                    ★
+                </div>
+
+                <span>
+                    Berikan Feedback
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026
+    <strong>YANZ MOD</strong>
+    <br><br>
+
+    Built with 💜 & code.
+
+</footer>
+
+<!-- TOAST -->
+
+<div id="toast">
+    Membuka...
+</div>
+
+<script>
+
+function showToast(text) {
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = text;
+
+    toast.classList.add("show");
+
+    setTimeout(function() {
+
+        toast.classList.remove("show");
+
+    }, 1800);
+
+}
+
+</script>
+
+</body>
+</html>
